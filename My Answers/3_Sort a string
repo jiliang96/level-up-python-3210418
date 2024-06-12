@@ -1,0 +1,9 @@
+
+def sort_a_string(phrase):
+  words_in = phrase.split(" ")
+  words_out = sorted(words_in, key = str.casefold)
+  output = " ".join(words_out)
+  return output
+
+print(sort_a_string("An apple falls to the GROUND"))
+print(sort_a_string("Another example with Capital letters"))
