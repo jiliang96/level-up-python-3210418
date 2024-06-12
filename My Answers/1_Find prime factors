@@ -1,0 +1,39 @@
+# import math
+# def get_prime_factors(number_in):
+#   uniq_primes = []
+#   for i in range(2, number_in + 1):
+#     for j in range(2, int(math.sqrt(i))+1):
+#       if i % j == 0:
+#         break
+#     else:
+#       uniq_primes.append(i)
+
+#   potential_prime_factors = [p for p in uniq_primes if number_in % p == 0]
+#   prime_factors = []
+#   prod = 1
+#   for k in potential_prime_factors:
+#     while True:
+#       if number_in % (prod * k) == 0:
+#         prime_factors.append(k)
+#         prod = prod * k
+#       if number_in % (prod * k) > 0:
+#         break
+#   return prime_factors
+
+
+# The method above is complicated
+def get_prime_factors(number):
+  factors = []
+  divisor = 2
+  while divisor <= number:
+    if number % divisor == 0:
+      factors.append(divisor)
+      number = number / divisor
+    else:
+      divisor += 1
+  return factors
+
+print(get_prime_factors(100))
+print(get_prime_factors(123))
+print(get_prime_factors(125))   
+print(get_prime_factors(453900))
